@@ -91,6 +91,7 @@ body{
     padding-left: 170px;
     padding-right: 170px;
     min-height: 50vh;
+    margin-bottom: 9rem;
 }
 .portfolio-content{
     flex: 1;
@@ -107,7 +108,7 @@ body{
     /* font-weight: bold; */
     margin-bottom: 20px;
 }
-.portfolio-content .btn {
+.btn {
     display: inline-block;
     padding: 12px 24px; /* Slightly larger padding */
     background: linear-gradient(45deg, #f25042, #ff6f61); /* Gradient background */
@@ -120,7 +121,7 @@ body{
     font-weight: bold; /* Bolder text */
 }
 
-.portfolio-content .btn:hover {
+.btn:hover {
     background: linear-gradient(45deg, #8c7851, #d9a572); /* Gradient changes on hover */
     transform: translateY(-3px); /* Slight upward movement on hover */
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
@@ -236,4 +237,103 @@ body{
   background-color: #f25042;
   transform: translateY(-3px); /* Slight upward movement on hover */
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+.about{
+  background-color: #eee;
+}
+.about-header{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.header-title{
+  margin-top: 30px;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.header-par{
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.about-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 50px;
+}
+
+.to-know, .skills {
+  flex: 1;
+  margin: 10px;
+}
+.to-know p{
+  font-size: 1.2rem;
+  justify-content: left;
+  margin-bottom: 2rem;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 2 columns for mobile view */
+  gap: 10px;
+}
+
+.skill-item {
+  background: rgba(153, 153, 153, 0.2);
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  /* width: fit-content; */
+  cursor: pointer;
+}
+
+.skill-item:hover {
+  background: rgba(153, 153, 153, 0.5);
+}
+
+.cont-title {
+  font-size: 24px;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+/* Mobile view - Stack sections and adjust skill layout */
+@media (max-width: 768px) {
+  .header-par{
+    font-size: 1.2rem;
+    max-width: 300px;
+  }
+  .about-body {
+      flex-direction: column; /* Stack the sections vertically */
+      align-items: center;
+  }
+  .to-know p{
+    font-size: 1.2rem;
+    max-width: 600px;
+  }
+
+  .skills {
+      width: 100%; /* Make the skills section take full width */
+  }
+
+  .skill-grid {
+      grid-template-columns: repeat(3, 1fr); /* 2 columns for mobile view */
+      gap: 10px;
+      width: 100%; /* Ensure grid takes full width */
+  }
+
+  .skill-item {
+      padding: 15px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .skill-grid {
+      grid-template-columns: 1fr; /* 1 column on very small screens */
+  }
 }
