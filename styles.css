@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  width: 100vw; /* Ensure the width doesn't exceed the viewport */
+}
+body{
+    background-color: #f9f4ef;
+    font-family: 'Montserrat';
+}
+.navbar{
+    background-color: #fffffe;
+    display: flex;
+    justify-content: space-between;
+    place-items: center;
+    padding: 15px 20px;
+    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1); /* Shadow for a 3D effect */
+}
+.fw-bold{
+    font-weight: bold;
+}
+.myLogo{
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-left: 20px;
+}
+.brandColor{
+    color: #f25042;
+}
+.brandColor1{
+    color: #8c7851;
+}
+.brandColor2{
+    color: #6246ea;
+}
+.nav-link{
+    margin-right: 60px;
+    display: flex;
+    list-style: none;
+}
+.nav-link li{
+    margin-left: 20px;
+}
+.nav-link a{
+    position: relative;
+    text-decoration: none;
+    color: #020826;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+.nav-link a:hover{
+    color: #f25042;
+}
+.nav-link a.active{
+    color: #f25042;
+}
+.nav-link a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: #f25042;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+.nav-link a:hover::after {
+    width: 100%;
+    left: 0;
+    transform: translateX(0); /* Full underline expansion on hover */
+}
+.nav-link a.active::after {
+    background-color: #f25042;
+    width: 100%;
+    left: 0;
+    transform: translateX(0); /* Full underline expansion on hover */
+}
+.portfolio{
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 60px;
+    padding-left: 170px;
+    padding-right: 170px;
+    min-height: 50vh;
+}
+.portfolio-content{
+    flex: 1;
+    padding-right: 30px;
+}
+.portfolio-content h1{
+    font-size: 2.5rem;
+    color: #020826;
+    margin-bottom: 20px;
+}
+.portfolio-content p{
+    font-size: 1.2rem;
+    color: #555;
+    /* font-weight: bold; */
+    margin-bottom: 20px;
+}
+.portfolio-content .btn {
+    display: inline-block;
+    padding: 12px 24px; /* Slightly larger padding */
+    background: linear-gradient(45deg, #f25042, #ff6f61); /* Gradient background */
+    color: #fffffe;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Shadow for a 3D effect */
+    font-weight: bold; /* Bolder text */
+}
+
+.portfolio-content .btn:hover {
+    background: linear-gradient(45deg, #8c7851, #d9a572); /* Gradient changes on hover */
+    transform: translateY(-3px); /* Slight upward movement on hover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.portfolio-profile{
+    flex: 1;
+    text-align: right;
+}
+.portfolio-profile img{
+    width: 380px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+/* Burger Menu for Mobile View */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  width: 25px;
+  height: 3px;
+  background-color: gray;
+  margin: 4px;
+  transition: all 0.3s ease;
+}
+  
+  /* Responsive Navbar */
+/* Hide nav-links on smaller screens */
+@media screen and (max-width: 768px) {
+  .nav-link {
+    position: fixed;
+    top: 65px;
+    right: -100%; /* Initially off-screen */
+    background-color: #fffffe;
+    width: 200px;
+    /* height: 100vh; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease; /* Smooth sliding effect */
+  }
+
+  .nav-link li {
+    margin: 15px 0;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+  
+  /* Menu visible when active */
+  .nav-link.active {
+    right: -55px; /* Slide in from the right */
+  }
+}
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    html, body{
+      font-size: 75%;
+    }
+    .portfolio {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .portfolio-content {
+      padding-right: 0;
+      margin-bottom: 30px;
+    }
+  
+    .portfolio-profile {
+      text-align: center;
+    }
+  
+    .portfolio-profile img {
+      width: 380px;
+      max-width: 300px;
+    }
+    .social-links{
+      justify-content: center;
+    }
+}
+.social-links{
+    margin-top: 45px;
+    display: flex;
+}
+.social-media{
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+.social-media a{
+    justify-content: center;
+    place-items: center;
+    text-decoration: none;
+    color: #fffffe;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.social-media a img{
+    max-width: 60px;
+    padding: 15px;
+    background-color: #020826   ;
+    border-radius: 50px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Shadow for a 3D effect */
+    transition: all 0.3s ease;
+}
+.social-media a img:hover{
+  background-color: #f25042;
+  transform: translateY(-3px); /* Slight upward movement on hover */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
